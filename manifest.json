@@ -1,0 +1,10 @@
+{
+    "name": "Organized Schoology",
+    "description": "Optimizes Schoology for Students (Extension)",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+      "default_popup": "kanban.html",
+      "default_icon": "hello_extensions.png"
+    }
+  }
