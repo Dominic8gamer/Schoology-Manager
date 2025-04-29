@@ -1,6 +1,9 @@
 function addTask() {
-    let newTask = document.createEleent("p");
+    let newTask = document.createElement("p");
     newTask.innerHTML = "New Task";
     document.getElementById("incompleteTasks").appendChild(newTask);
-    console.log("")
-}
+  }
+  
+  window.onload = function() {
+    document.getElementById("addTaskButton").addEventListener("click", addTask);
+  };

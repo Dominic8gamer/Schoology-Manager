@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
   </head>
   <body>
     <h1>Kanban Board</h1>
@@ -12,23 +13,12 @@
       </tr>
       <tr>
         <p>
-        <td id = "incompleteTasks">Incomplete Task</td>
+        <td id = "incompleteTasks"> Incomplete Task</td>
         <td>Inprogress Task</td>
         <td>Completed Task</td>
       </tr>
     </table>  
-    <input type="button" value="Add Task" onclick="addTask()">
-    <p>new change</p>
-
-    <script>
-    
-    function addTask() {
-      let newTask = document.createElement("p");
-      newTask.innerHTML = "New Task";
-      document.getElementById("incompleteTasks").appendChild(newTask);
-    }
-
-    </script>
-
+    <input id = "addTaskButton" type="button" value="Add Task">
+    <p></p>
   </body>
 </html>
