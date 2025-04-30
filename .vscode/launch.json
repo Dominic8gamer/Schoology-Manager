@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open kanban.html",
-            "file": "c:\\Users\\liamr\\Schoology-Manager\\kanban.html"
+            "file": "c:\\Users\\liamr\\Downloads\\Schoology-Manager\\kanban.html"
         }
     ]
 }

@@ -1,4 +1,9 @@
+let value = ""
 
+function getValue() {
+  let inputField = document.getElementById("taskName");
+  value = inputField.value;
+}
 
 function addTask() {
     let newTask = document.createElement("p");
@@ -7,10 +12,8 @@ function addTask() {
   }
   
   window.onload = function() {
+    document.getElementById("addTaskButton").addEventListener("click", getValue);
     document.getElementById("addTaskButton").addEventListener("click", addTask);
   };
 
-function getValue() {
-    let inputField = document.getElementById("taskName");
-    let value = inputField.value;
-}
+
