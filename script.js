@@ -9,6 +9,7 @@ function addTask() {
     let newTask = document.createElement("p");
     newTask.innerHTML = value;
     document.getElementById("incompleteTasks").appendChild(newTask);
+    document.getElementById('taskName').value = ""
   }
   
   window.onload = function() {
