@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
   </head>
-  <body>
+  <body onload="tooLongDisplay()">
     <h1>Kanban Board</h1>
     <table border="1">
       <tr>
@@ -20,6 +20,6 @@
     </table>  
     <input id = "addTaskButton" type="button" value="Add Task">
     <input type="text" id="taskName" placeholder="Enter Task">
-    <p></p>
+    <p id="length">Task name is too long, has to be under 10 characters.</p>
   </body>
 </html>
