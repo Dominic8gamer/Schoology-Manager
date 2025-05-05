@@ -31,19 +31,33 @@ function handleDrop(e) {
 }
 
 function addTask() {
-    if (!value.trim()) return;
-    if (value.length > 10) {
-      tooLong = true;
-      return;
-    }
-    let newTask = document.createElement("p");
-    newTask.innerHTML = value;
-    newTask.draggable = true;
-    newTask.id = "task-" + new Date().getTime();
-    newTask.addEventListener('dragstart', handleDragStart);
-    document.getElementById("incompleteTasks").appendChild(newTask);
-    document.getElementById('taskName').value = ""
+  if (!value.trim()) {
+    tooLong = false;
+    tooLongDisplay();
+    return;
   }
+  if (value.length >= 10) {
+    tooLong = true;
+    tooLongDisplay();
+    return;
+  }
+  tooLong = false;
+  tooLongDisplay();
+
+  let newTask = document.createElement("p");
+  newTask.innerHTML = value;
+  newTask.draggable = true;
+  newTask.id = "task-" + new Date().getTime();
+  newTask.addEventListener('dragstart', handleDragStart);
+  document.getElementById("incompleteTasks").appendChild(newTask);
+  document.getElementById('taskName').value = "";
+}
+
+document.getElementById("taskName").addEventListener("input", function () {
+  value = this.value;
+  tooLong = value.length >= 10;
+  tooLongDisplay();
+});
   
   window.onload = function() {
     document.getElementById("addTaskButton").addEventListener("click", getValue);
