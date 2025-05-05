@@ -3,8 +3,17 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
   </head>
+  <style>          
+    body {
+      background-color: rgb(255, 255, 255);
+    }
+  </style>
   <body onload="tooLongDisplay()">
     <h1>Kanban Board</h1>
+    <label class="toggle-switch">
+      <input type="checkbox" id="darkMode" value="checked"/>
+      <span class="slider"></span>
+    </label>
     <table border="1">
       <tr>
         <th class="Incomplete">Incomplete</th>
@@ -20,6 +29,6 @@
     </table>  
     <input id = "addTaskButton" type="button" value="Add Task">
     <input type="text" id="taskName" placeholder="Enter Task">
-    <p id="length" style="display: none;">Task name is too long, has to be under 10 characters.</p>
+    <p id="length" style="display: none;">Task name is too long, has to be under 30 characters.</p>
   </body>
 </html>

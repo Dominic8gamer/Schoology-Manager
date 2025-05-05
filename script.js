@@ -1,6 +1,16 @@
 let value = ""
 let tooLong = false
 
+const checkbox = document.getElementById("darkMode");
+checkbox.addEventListener("change", function () {
+  if (checkbox.checked) {
+    document.body.style.backgroundColor = "#1e1e1e";
+
+  } else {
+    document.body.style.backgroundColor = "#ffffff";
+  }
+});
+
 function tooLongDisplay() {
   var x = document.getElementById("length");
   if (tooLong) {
@@ -36,7 +46,7 @@ function addTask() {
     tooLongDisplay();
     return;
   }
-  if (value.length >= 10) {
+  if (value.length >= 30) {
     tooLong = true;
     tooLongDisplay();
     return;
@@ -55,7 +65,7 @@ function addTask() {
 
 document.getElementById("taskName").addEventListener("input", function () {
   value = this.value;
-  tooLong = value.length >= 10;
+  tooLong = value.length >= 30;
   tooLongDisplay();
 });
   
