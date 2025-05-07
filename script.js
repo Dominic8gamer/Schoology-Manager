@@ -5,9 +5,19 @@ const checkbox = document.getElementById("darkMode");
 checkbox.addEventListener("change", function () {
   if (checkbox.checked) {
     document.body.style.backgroundColor = "#1e1e1e";
+    var x = document.getElementsByClassName("colorChange");
+    for (var i = 0; i < x.length; i++) {
+      x[i].style.color = "white";
+    }
+    //set class objects to the darker option
 
   } else {
     document.body.style.backgroundColor = "#ffffff";
+    var x = document.getElementsByClassName("colorChange");
+    for (var i = 0; i < x.length; i++) {
+      x[i].style.color = "black";
+    }
+    //set class objects to the slighter option
   }
 });
 
@@ -61,6 +71,7 @@ function addTask() {
   newTask.addEventListener('dragstart', handleDragStart);
   document.getElementById("incompleteTasks").appendChild(newTask);
   document.getElementById('taskName').value = "";
+  newTask.classList.add("colorChange");
 }
 
 document.getElementById("taskName").addEventListener("input", function () {
