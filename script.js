@@ -9,7 +9,6 @@ checkbox.addEventListener("change", function () {
     for (var i = 0; i < x.length; i++) {
       x[i].style.color = "white";
     }
-    //set class objects to the darker option
 
   } else {
     document.body.style.backgroundColor = "#ffffff";
@@ -17,7 +16,6 @@ checkbox.addEventListener("change", function () {
     for (var i = 0; i < x.length; i++) {
       x[i].style.color = "black";
     }
-    //set class objects to the slighter option
   }
 });
 
@@ -80,14 +78,14 @@ document.getElementById("taskName").addEventListener("input", function () {
   tooLongDisplay();
 });
   
-  window.onload = function() {
-    document.getElementById("addTaskButton").addEventListener("click", getValue);
-    document.getElementById("addTaskButton").addEventListener("click", addTask);
+window.onload = function() {
+  document.getElementById("addTaskButton").addEventListener("click", getValue);
+  document.getElementById("addTaskButton").addEventListener("click", addTask);
 
-    const containers = ['incompleteTasks', 'inprogressTasks', 'completedTasks'];
-    containers.forEach(id => {
-      const el = document.getElementById(id);
-      el.addEventListener('dragover', handleDragOver);
-      el.addEventListener('drop', handleDrop);
-    });
+  const containers = ['incompleteTasks', 'inprogressTasks', 'completedTasks'];
+  containers.forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('dragover', handleDragOver);
+    el.addEventListener('drop', handleDrop);
+  });
   };
