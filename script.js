@@ -1,5 +1,7 @@
 let value = ""
+let description = ""
 let tooLong = false
+let color = false
 
 const checkbox = document.getElementById("darkMode");
 checkbox.addEventListener("change", function () {
@@ -9,6 +11,7 @@ checkbox.addEventListener("change", function () {
     for (var i = 0; i < x.length; i++) {
       x[i].style.color = "white";
     }
+    color = false;
 
   } else {
     document.body.style.backgroundColor = "#ffffff";
@@ -16,6 +19,7 @@ checkbox.addEventListener("change", function () {
     for (var i = 0; i < x.length; i++) {
       x[i].style.color = "black";
     }
+    color = true
   }
 });
 
@@ -31,6 +35,11 @@ function tooLongDisplay() {
 function getValue() {
   let inputField = document.getElementById("taskName");
   value = inputField.value;
+}
+
+function getDescription() {
+  let inputField = document.getElementById("taskName");
+  description = inputField.description;
 }
 
 function handleDragStart(e) {
@@ -70,6 +79,11 @@ function addTask() {
   document.getElementById("incompleteTasks").appendChild(newTask);
   document.getElementById('taskName').value = "";
   newTask.classList.add("colorChange");
+  newTask.style.cursor = "pointer";
+  newTask.setAttribute("type", "button");
+  if (color) {
+    newTask.color = "white";
+  }
 }
 
 document.getElementById("taskName").addEventListener("input", function () {
@@ -80,6 +94,7 @@ document.getElementById("taskName").addEventListener("input", function () {
   
 window.onload = function() {
   document.getElementById("addTaskButton").addEventListener("click", getValue);
+  document.getElementById("addTaskButton").addEventListener("click", getDescription);
   document.getElementById("addTaskButton").addEventListener("click", addTask);
 
   const containers = ['incompleteTasks', 'inprogressTasks', 'completedTasks'];
@@ -88,4 +103,4 @@ window.onload = function() {
     el.addEventListener('dragover', handleDragOver);
     el.addEventListener('drop', handleDrop);
   });
-  };
+};
