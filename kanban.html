@@ -10,10 +10,6 @@
   </style>
   <body onload="tooLongDisplay()">
     <h1 class="colorChange">Kanban Board</h1>
-    <label class="toggle-switch">
-      <input type="checkbox" id="darkMode" value="checked"/>
-      <span class="slider"></span>
-    </label>
     <table border="1">
       <tr>
         <th class="Incomplete">Incomplete</th>
@@ -30,6 +26,10 @@
     <input id = "addTaskButton" type="button" value="Add Task">
     <input type="text" id="taskName" placeholder="Enter Task">
     <input type="text" id="description" placeholder="Enter Description">
+    <label class="toggle-switch">
+      <input type="checkbox" id="darkMode" value="checked"/>
+      <span class="slider"></span>
+    </label>
     <p id="length" style="display: none;">Task name is too long, has to be under 30 characters.</p>
   </body>
 </html>
