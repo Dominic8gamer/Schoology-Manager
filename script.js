@@ -38,8 +38,8 @@ function getValue() {
 }
 
 function getDescription() {
-  let inputField = document.getElementById("taskName");
-  description = inputField.description;
+  let inputField = document.getElementById("description");
+  description = inputField.value;
 }
 
 function handleDragStart(e) {
@@ -72,12 +72,13 @@ function addTask() {
   tooLongDisplay();
 
   let newTask = document.createElement("p");
-  newTask.innerHTML = value;
+  newTask.innerHTML = value + " - " + description;
   newTask.draggable = true;
   newTask.id = "task-" + new Date().getTime();
   newTask.addEventListener('dragstart', handleDragStart);
   document.getElementById("incompleteTasks").appendChild(newTask);
   document.getElementById('taskName').value = "";
+  document.getElementById('description').value = "";
   newTask.classList.add("colorChange");
   newTask.style.cursor = "pointer";
   newTask.setAttribute("type", "button");
